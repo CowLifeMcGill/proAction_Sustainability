@@ -42,15 +42,11 @@ getSeason <- function(DATES) {
 
 
 
-
-
-
 # Loading data ####
 pa <- readRDS("~/proAction_anon_hrd_tbl.rds")
 lpl <- readRDS("~/prod_lifetime_anon_anm_tbl.rds")
 research_data <- readRDS("~/res_data_anon_anm_tbl.rds")
 hsi <- readRDS("~/whi_indicators_anon_tbl.rds")
-
 
 
 # Generating a more readable herd ID and animal ID 
@@ -62,8 +58,6 @@ unique_hrd_id <- pa %>%
         hsi %>%  select(id)) %>% 
   distinct(id) %>% 
   mutate(hrd_id = seq_along(id))
-
-
 
 
 # Cleaning data ####
@@ -160,8 +154,6 @@ hsi2 %>%
 hsi2 %>% 
   pull(avg_mortality_pcntg) %>% 
   summary()
-
-
 # No indication of problem here!
 
 
@@ -174,8 +166,6 @@ hsi2 %>%
 hsi2 %>% 
   pull(pctmun5) %>% 
   summary()
-
-
 # Data is very skewed, but there is not much justifiable reason to remove observations!
 
 
@@ -188,9 +178,6 @@ hsi2 %>%
 hsi2 %>% 
   pull(pctpfratio11) %>% 
   summary()
-
-
-
 # Data is very skewed, but there is not much justifiable reason to remove data!
 
 
@@ -203,7 +190,6 @@ hsi2 %>%
 hsi2 %>% 
   pull(enercorr_mi) %>% 
   summary()
-
 # No indication of problem here!
 
 
@@ -216,7 +202,6 @@ hsi2 %>%
 hsi2 %>% 
   pull(avg_tci_yr) %>% 
   summary()
-
 # No indication of problem here!
 
 
@@ -229,7 +214,6 @@ hsi2 %>%
 hsi2 %>% 
   pull(day_life_value_rank) %>% 
   summary()
-
 # No indication of problem here!
 
 
@@ -242,7 +226,6 @@ hsi2 %>%
 hsi2 %>% 
   pull(pctcalfdead) %>% 
   summary()
-
 # Data is very skewed, but there is not much justifiable reason to remove data!
 
 
@@ -280,7 +263,6 @@ hsi3 %>%
 hsi3 %>% 
   pull(pct_lact_start_abortion) %>% 
   summary()
-
 # Data is very skewed, but there is not much justifiable reason to remove data!
 
 
@@ -293,7 +275,6 @@ hsi3 %>%
 hsi3 %>% 
   pull(pctbhb20) %>% 
   summary()
-
 # No indication of problem here!
 
 
@@ -306,7 +287,6 @@ hsi3 %>%
 hsi3 %>% 
   pull(pctccs400) %>% 
   summary()
-
 # No indication of problem here!
 
 
