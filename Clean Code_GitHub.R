@@ -491,7 +491,7 @@ wd4 <- research_data %>%
   # Calculate ECM
   mutate(ecm = 12.55*lact_date_yld_fat + 
            7.39*lact_date_yld_prot + 
-           0.2595*lact_date_yld_prot) %>%
+           0.2595*lact_date_yld_milk) %>%
   
   # Calculate cumulative sum
   group_by(hrd_id) %>% 
