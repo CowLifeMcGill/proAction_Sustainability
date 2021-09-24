@@ -2127,7 +2127,7 @@ confusionMatrix(data = predict(svm_dhi.up, valid.dhi),
 
 ## Interpreting the model with the best accuracy and that predicted all cluster labels ####
 
-predictor.dhi <- Predictor$new(model = rf_dhi, 
+predictor.dhi <- Predictor$new(model = svm_dhi.bal, 
                                data = wd5 %>% 
                                  select(cluster, ecm, cumul_milk_value, lpl, avg_pcntg_lgvt),
                                y = "cluster")
@@ -2155,7 +2155,7 @@ ale.ecm.plot <- plot(ale.ecm.dhi) +
                                        "Cluster.6" = "Cluster 6")),
              nrow = 2) +
   theme_classic(base_family = "Times New Roman") + 
-  scale_y_continuous(limits = c(-0.55, 0.9),
+  scale_y_continuous(limits =c(-0.60, 1.15),
                      breaks = seq(-0.50, 0.85, by = 0.22)) +
   theme(axis.text = element_text(size = 10, color = "black"),
         axis.ticks.x = element_line(color = "black"),
@@ -2193,7 +2193,7 @@ ale.cumul_milk_value.plot <- plot(ale.cumul_milk_value.dhi) +
                                        "Cluster.6" = "Cluster 6")),
              nrow = 2) +
   theme_classic(base_family = "Times New Roman") + 
-  scale_y_continuous(limits = c(-0.55, 0.9),
+  scale_y_continuous(limits = c(-0.60, 1.15),
                      breaks = seq(-0.50, 0.85, by = 0.22)) +
   theme(axis.text = element_text(size = 10, color = "black"),
         axis.ticks.x = element_line(color = "black"),
@@ -2231,7 +2231,7 @@ ale.lpl.plot <- plot(ale.lpl.dhi) +
                                        "Cluster.6" = "Cluster 6")),
              nrow = 2) +
   theme_classic(base_family = "Times New Roman") + 
-  scale_y_continuous(limits = c(-0.55, 0.9),
+  scale_y_continuous(limits = c(-0.60, 1.15),
                      breaks = seq(-0.50, 0.85, by = 0.22)) +
   theme(axis.text = element_text(size = 10, color = "black"),
         axis.ticks.x = element_line(color = "black"),
@@ -2268,7 +2268,7 @@ ale.avg_pcntg_lgvt.plot <- plot(ale.avg_pcntg_lgvt.dhi) +
                                        "Cluster.6" = "Cluster 6")),
              nrow = 2) +
   theme_classic(base_family = "Times New Roman") + 
-  scale_y_continuous(limits = c(-0.55, 0.9),
+  scale_y_continuous(limits = c(-0.60, 1.15),
                      breaks = seq(-0.50, 0.85, by = 0.22)) +
   theme(axis.text = element_text(size = 10, color = "black"),
         axis.ticks.x = element_line(color = "black"),
